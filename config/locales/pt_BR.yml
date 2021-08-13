@@ -192,7 +192,7 @@ pt_BR:
         username: Identificação
       title: Administrar Usuários
   add_to_google_calendar: "Adicionar ao Google Calendar"
-  bigbluebutton: BigBlueButton
+  bigbluebutton: HypeEd
   bigbluebutton_exception: "Oops, um erro ocorreu ao iniciar a sala."
   cancel: Cancelar
   cookies:
@@ -268,7 +268,7 @@ pt_BR:
     email: Email
     submit: Enviar
   go_back: Voltar
-  greenlight: Greenlight
+  greenlight: HypeEd
   header:
     all_recordings: Gravações
     dropdown:
@@ -292,9 +292,9 @@ pt_BR:
     search:
       start: Iniciar pesquisa...
   landing:
-    about: "%{href} é um front-end para seu servidor BigBlueButton. Você pode criar suas salas para realizar sessões, ou entrar em salas de outras pessoas utilizando um link curto."
-    welcome: Bem-vindo ao BigBlueButton.
-    video: Assista ao nosso tutorial sobre como utilizar o Greenlight
+    about: "%{href} é um front-end para seu servidor. Você pode criar suas salas para realizar sessões, ou entrar em salas de outras pessoas utilizando um link curto."
+    welcome: Bem-vindo ao HypeEd.
+    video: Assista ao nosso tutorial sobre como utilizar o HypeEd
     upgrade: Mostre-me como atualizar para o 2.0!
     version: "Lançamos uma nova versão do Greenlight, entretanto sua base de dados é incompatível."
   language_default: Padrão (idioma do navegador)

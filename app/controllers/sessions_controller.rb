@@ -47,6 +47,48 @@ class SessionsController < ApplicationController
   def ldap_signin
   end
 
+  # Get /flash
+  def flash
+    flash.now[:alert] = "We have exactly books available."
+  end
+
+  # Get /get_guru
+  def getGuru
+    begin
+      logger.error "Hit the get Guru API"
+      file = File.read('/usr/src/app/storage/guruDetails.json')
+      data_hash = JSON.parse(file)
+      render json: {guruDetails: data_hash}
+    rescue => e
+      data = {
+        :guruUrl => "https://hype.onescreensolutions.com",
+        :guruCode => ""
+      }
+      render json: {guruDetails: data}
+    end
+  end
+
+  # Post /setGuru
+  def setGuru
+    logger.error "Hit the set Guru API"
+    begin
+      logger.error "data from request #{params[:guruUrl]} and code is #{params[:guruCode]}"
+      data = {
+        :guruUrl => params[:guruUrl],
+        :guruCode => params[:guruCode]
+      }
+      File.open("/usr/src/app/storage/guruDetails.json", "w") { |f| f.write data.to_json }
+      render json: {guruDetails: data}
+    rescue => e
+      data = {
+        :guruUrl => "https://hype.onescreensolutions.com",
+        :guruCode => ""
+      }
+      render :json => data
+    end
+  end
+
+
   # GET /signup
   def new
     # Check if the user needs to be invited

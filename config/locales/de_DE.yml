@@ -224,7 +224,7 @@ de_DE:
         valid: Gültig
       title: Nutzer verwalten
   add_to_google_calendar: "Zum Google Kalender hinzufügen"
-  bigbluebutton: BigBlueButton
+  bigbluebutton: HypeEd
   bigbluebutton_exception: "Ups, beim Start der Konferenz ist ein Fehler aufgetreten!"
   cancel: Abbrechen
   cookies:
@@ -302,7 +302,7 @@ de_DE:
     email: E-Mail
     submit: Abschicken
   go_back: Zurück
-  greenlight: Greenlight
+  greenlight: HypeEd
   header:
     all_recordings: Alle Aufzeichnungen
     dropdown:
@@ -327,9 +327,9 @@ de_DE:
     search:
       start: Suche beginnen...
   landing:
-    about: "%{href} ist eine benutzerfreundliche Oberfläche für das Open-Source-Webkonferenzsystem BigBlueButton. Sie können Ihre eigenen Räume erstellen, um Konferenzen zu veranstalten oder können bestehenden Konferenzen über einen kurzen und bequemen Link beitreten."
-    welcome: Willkommen zu BigBlueButton.
-    video: Schauen Sie sich unsere Anleitung zur Verwendung von Greenlight an
+    about: "%{href} ist eine benutzerfreundliche Oberfläche für das Open-Source-Webkonferenzsystem. Sie können Ihre eigenen Räume erstellen, um Konferenzen zu veranstalten oder können bestehenden Konferenzen über einen kurzen und bequemen Link beitreten."
+    welcome: Willkommen zu HypeEd.
+    video: Schauen Sie sich unsere Anleitung zur Verwendung von HypeEd an
     upgrade: "Zeigen Sie mir, wie ich auf Version 2.0. update!"
     version: "Wir haben eine neue Version von Greenlight veröffentlicht, aber Ihre Datenbank ist damit nicht kompatibel."
   language_default: Voreinstellung (Browsersprache)

@@ -192,7 +192,7 @@ id_ID:
         username: Username
       title: Tinjau Anggota
   add_to_google_calendar: " Catat di Google Calendar"
-  bigbluebutton: BigBlueButton
+  bigbluebutton: HypeEd
   bigbluebutton_exception: Ada kejanggalan saat mencoba mememulai pertemuan.
   cancel: Batalkan
   cookies:
@@ -268,7 +268,7 @@ id_ID:
     email: Email
     submit: Kirim
   go_back: Kembali
-  greenlight: Greenlight
+  greenlight: HypeEd
   header:
     all_recordings: Semua Rekaman
     dropdown:
@@ -292,9 +292,9 @@ id_ID:
     search:
       start: Temukan ...
   landing:
-    about: "%{href} adalah antar-muka untuk server BigBlueButton yang memungkinkan Anda membentuk ruang-ruang pertemuan, atau bergabung ke ruang pertemuan lain melalui tautan yang singkat dan nyaman digunakan."
-    welcome: Selamat datang di BigBlueButton.
-    video: Saksiksan video petunjuk penggunaan Greenlight
+    about: "%{href} adalah antar-muka untuk server yang memungkinkan Anda membentuk ruang-ruang pertemuan, atau bergabung ke ruang pertemuan lain melalui tautan yang singkat dan nyaman digunakan."
+    welcome: Selamat datang di HypeEd.
+    video: Saksiksan video petunjuk penggunaan HypeEd
     upgrade: Cara upgrade ke versi 2.0!
     version: "Greenlight versi baru sudah ada, tapi database Anda tidak cocok."
   language_default: Default (mengikuti bahasa peramban)

@@ -192,7 +192,7 @@ uk:
         username: Ім'я користувача
       title: Керування користувачами
   add_to_google_calendar: "Додати до мого Google Календаря"
-  bigbluebutton: BigBlueButton
+  bigbluebutton: HypeEd
   bigbluebutton_exception: "Упс, сталася помилка при спробі запуску зустрічі!"
   cancel: Скасування
   cookies:
@@ -268,7 +268,7 @@ uk:
     email: Електронна пошта
     submit: Надіслати
   go_back: Повернутися
-  greenlight: Greenlight
+  greenlight: HypeEd
   header:
     all_recordings: Всі записи
     dropdown:
@@ -292,9 +292,9 @@ uk:
     search:
       start: Пошук...
   landing:
-    about: " %{href} - це спрощений інтерфейс користувача служби вебконференцій BigBlueButton. Тут ви можете створювати власні кімнати для проведення зустрічей або приєднуватися до інших зустрічей за допомогою коротких зручних посилань."
-    welcome: Вітаємо у BigBlueButton!
-    video: Як користуватися Greenlight
+    about: " %{href} - це спрощений інтерфейс користувача служби вебконференцій. Тут ви можете створювати власні кімнати для проведення зустрічей або приєднуватися до інших зустрічей за допомогою коротких зручних посилань."
+    welcome: Вітаємо у HypeEd!
+    video: Як користуватися HypeEd
     upgrade: "Покажіть мені, як оновитися до 2.0!"
     version: "Ми випустили нову версію Greenlight, але ваша база даних не сумісна."
   language_default: Типово (мова браузера)

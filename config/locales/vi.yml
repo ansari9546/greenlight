@@ -177,7 +177,7 @@ vi:
         username: Tên đăng nhập
       title: Quản lý người dùng
   add_to_google_calendar: "Thêm vào lịch Google"
-  bigbluebutton: BigBlueButton
+  bigbluebutton: HypeEd
   bigbluebutton_exception: "Rất tiếc, đã xảy ra lỗi khi bắt đầu cuộc họp!"
   cancel: Hủy
   cookies:
@@ -251,7 +251,7 @@ vi:
     email: Email
     submit: Gửi
   go_back: Quay lại
-  greenlight: Greenlight
+  greenlight: HypeEd
   header:
     all_recordings: Tất cả bản ghi hình
     dropdown:
@@ -275,9 +275,9 @@ vi:
     search:
       start: Bắt đầu tìm kiếm...
   landing:
-    about: "%{href} là một giao diện cơ bản dành cho máy chủ hội nghị trực tuyến mã nguồn mở BigBlueButton của bạn. Bạn có thể tạo những phòng riêng của mình để tổ chức các phiên hoặc tham gia với những người khác bằng cách sử dụng một liên kết ngắn và thuận tiện."
-    welcome: Chào mừng đến với BigBlueButton.
-    video: Xem thêm hướng dẫn sử dụng Greenlight
+    about: "%{href} là một giao diện cơ bản dành cho máy chủ hội nghị trực tuyến mã nguồn mở của bạn. Bạn có thể tạo những phòng riêng của mình để tổ chức các phiên hoặc tham gia với những người khác bằng cách sử dụng một liên kết ngắn và thuận tiện."
+    welcome: Chào mừng đến với HypeEd.
+    video: Xem thêm hướng dẫn sử dụng HypeEd
     upgrade: Hãy chỉ cho tôi cách nâng cấp lên 2.0!
     version: "Chúng tôi đã phát hành phiên bản mới của Greenlight, nhưng cơ sở dữ liệu của bạn không tương thích."
   language_default: Mặc định (ngôn ngữ từ trình duyệt)

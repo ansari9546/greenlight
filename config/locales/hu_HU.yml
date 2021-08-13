@@ -210,7 +210,7 @@ hu_HU:
         username: Felhasználónév
       title: Felhasználókezelés
   add_to_google_calendar: "Google Naptár hozzáadása"
-  bigbluebutton: BigBlueButton
+  bigbluebutton: HypeEd
   bigbluebutton_exception: "Sajnáljuk, hiba történt a találkozó indításakor!"
   cancel: Mégsem
   cookies:
@@ -286,7 +286,7 @@ hu_HU:
     email: E-mail
     submit: Jóváhagyás
   go_back: Vissza
-  greenlight: Greenlight
+  greenlight: HypeEd
   header:
     all_recordings: Összes felvétel
     dropdown:
@@ -310,9 +310,9 @@ hu_HU:
     search:
       start: Keresés indítása...
   landing:
-    about: "%{href} egy egyszerű front-end a nyílt forráskódú BigBlueButton webkonferencia-rendszerhez. Saját magadnak szobákat hozhatsz létre, illetve mások csatlakozhatnak egy rövid link használatával."
-    welcome: A BigBlueButton üdvözöl.
-    video: Nézd meg az ismertetőnket a  Greenlight használatáról
+    about: "%{href} egy egyszerű front-end a nyílt forráskódú webkonferencia-rendszerhez. Saját magadnak szobákat hozhatsz létre, illetve mások csatlakozhatnak egy rövid link használatával."
+    welcome: A HypeEd üdvözöl.
+    video: Nézd meg az ismertetőnket a  HypeEd használatáról
     upgrade: "Mutasd, hogyan tudok frissíteni a 2.0-ás verzióra!"
     version: "A Greenlight új verziója jelent meg, de az adatbázisod nem kompatibilis."
   language_default: Alapértelmezett (a böngésző nyelve)

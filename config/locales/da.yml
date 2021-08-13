@@ -223,7 +223,7 @@ da:
         valid: Gyldig
       title: Styr Brugere
   add_to_google_calendar: "Føj til Google Kalender"
-  bigbluebutton: BigBlueButton
+  bigbluebutton: HypeEd
   bigbluebutton_exception: "Hov, der skete en fejl når vi startede dit møde."
   cancel: Annuller
   cookies:
@@ -301,7 +301,7 @@ da:
     email: Email
     submit: Send
   go_back: Gå tilbage
-  greenlight: Greenlight
+  greenlight: HypeEd
   header:
     all_recordings: Alle Optagelser
     dropdown:
@@ -326,9 +326,9 @@ da:
     search:
       start: Start søgning...
   landing:
-    about: "%{href} er et simpelt front-end system til BigBlueButton open-source web konference server. Du kan oprette dine egne rum og hoste sessioner, eller tilslutte andre ved brug af korte og nemme links."
-    welcome: Velkommen til BigBlueButton.
-    video: Se vores vejledninger om hvordan man bruger Greenlight
+    about: "%{href} er et simpelt front-end system til open-source web konference server. Du kan oprette dine egne rum og hoste sessioner, eller tilslutte andre ved brug af korte og nemme links."
+    welcome: Velkommen til HypeEd.
+    video: Se vores vejledninger om hvordan man bruger HypeEd
     upgrade: Vis mig hvordan man opgradere til 2.0!
     version: "Vi har udgivet en ny version af Greenlight, men din database er ikke kompatibel."
   language_default: Standard (browser sprog)

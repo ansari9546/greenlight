@@ -210,7 +210,7 @@ zh_CN:
         username: 用户名
       title: 管理用户
   add_to_google_calendar: "添加到谷歌日历"
-  bigbluebutton: BigBlueButton
+  bigbluebutton: HypeEd
   bigbluebutton_exception: 哎呀，启动会议出错！
   cancel: 取消
   cookies:
@@ -286,7 +286,7 @@ zh_CN:
     email: Email
     submit: 提交
   go_back: 返回
-  greenlight: Greenlight
+  greenlight: HypeEd
   header:
     all_recordings: 所有录像
     dropdown:
@@ -310,8 +310,8 @@ zh_CN:
     search:
       start: 开始搜索...
   landing:
-    about: "%{href} 是开源Web会议服务器BigBluebutton的简易前端。我们可以创建并主持会议，或通过链接加入其他会议。"
-    welcome: 欢迎来到BigBlueButton在线会议系统
+    about: "%{href} 是开源Web会议服务器 的简易前端。我们可以创建并主持会议，或通过链接加入其他会议。"
+    welcome: 欢迎来到HypeEd在线会议系统
     video: 请看使用说明
     upgrade: 告诉我怎么升级到 2.0!
     version: 我们发布了新版Greenlight，但您的数据库不兼容。

@@ -192,7 +192,7 @@ he_IL:
         username: שם משתמש
       title: ניהול משתמשים
   add_to_google_calendar: "הוסף Google Calendar"
-  bigbluebutton: BigBlueButton
+  bigbluebutton: HypeEd
   bigbluebutton_exception: "אופס, אירעה שגיאה בניסיון להתחיל את הפגישה!"
   cancel: ביטול
   cookies:
@@ -268,7 +268,7 @@ he_IL:
     email: Email
     submit: לשלוח
   go_back: חזרה
-  greenlight: Greenlight
+  greenlight: HypeEd
   header:
     all_recordings: כל ההקלטות
     dropdown:
@@ -292,9 +292,9 @@ he_IL:
     search:
       start: לחפש...
   landing:
-    about: "%{href} BigBlueButton היא מערכת פרונט-אנד פשוטה עבור שרתי ועידת האינטרנט עם קוד פתוח . אתם יכולים ליצור חדרים משלכם ולארח ועידות, או להצטרף לאחרים באמצעות קישור קצר ונוח."
-    welcome: ברוכים הביאים ל BigBlueButton.
-    video: צפו במדריך שלנו לשימוש ב Greenlight
+    about: "%{href} היא מערכת פרונט-אנד פשוטה עבור שרתי ועידת האינטרנט עם קוד פתוח . אתם יכולים ליצור חדרים משלכם ולארח ועידות, או להצטרף לאחרים באמצעות קישור קצר ונוח."
+    welcome: ברוכים הביאים ל HypeEd.
+    video: צפו במדריך שלנו לשימוש ב HypeEd
     upgrade: הראה לי כיצד לשדרג ל- 2.0!
     version: "פרסמנו גרסה חדשה של Greenlight, אך בסיס הנתונים שלך אינו תואם"
   language_default: בריברת מחדל (שפת דפדפן)

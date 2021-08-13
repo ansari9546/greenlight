@@ -42,4 +42,37 @@
       <span class="icon nav-icon"><i class="fas fa-user-tag"></i></span><%= t("administrator.roles.title") %>
     <% end %>
   <% end %>
+
+  <% if highest_role.get_permission("can_edit_roles")  || highest_role.name == "super_admin" %>
+    <button class="list-group-item list-group-item-action dropdown-item" data-toggle="modal" data-target="#getGuruDetails">
+    <span class="icon nav-icon"><i class="fas fa-user-tag"></i></span> Guru Settings
+    </button>
+  <% end %>
+</div>
+
+
+<div class="modal fade" id="getGuruDetails" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content text-center">
+      <div class="modal-body">
+        <div class="card-body p-6">
+          <div class="card-title">
+            <h3>Guru Settings</h3>
+          </div>
+          <div class="form-group">
+              <label class="form-label text-align-left" >Guru Url</label>
+              <input class="form-control " placeholder="https://hype.onescreensolutions.com" type="text" id="guruUrl">
+            </div>
+            <div class="form-group">
+              <label class="form-label text-align-left">Guru Code</label>
+              <input class="form-control " placeholder="A code can be combination of 5 to 10 alphanumeric words" type="text" id="guruCode">
+            </div>
+          <div class="mt-6">
+            <button id="setGuruDetails" class="btn btn-primary btn-block" >Save</button>
+            <button class="btn btn-secondary text-primary btn-block" onclick="$('#getGuruDetails').modal('hide')"><%= t("modal.merge_user.cancel") %></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -223,7 +223,7 @@ it:
         valid: Valido
       title: Gestisci utenti
   add_to_google_calendar: "Aggiungi a Google Calendar"
-  bigbluebutton: BigBlueButton
+  bigbluebutton: HypeEd
   bigbluebutton_exception: "Oops, c'è stato un errore nell'avvio del meeting!"
   cancel: Annulla
   cookies:
@@ -299,7 +299,7 @@ it:
     email: Email
     submit: Invia
   go_back: Indietro
-  greenlight: Greenlight
+  greenlight: HypeEd
   header:
     all_recordings: Tutte le Registrazioni
     dropdown:
@@ -323,9 +323,9 @@ it:
     search:
       start: Inizio ricerca...
   landing:
-    about: "%{href} è una semplice interfaccia per il software di video-conferenza open source BigBlueButton. Puoi creare Stanze per ospitare i meeting, o partecipare ad altri meeting utilizzando pratici collegamenti brevi."
-    welcome: Benvenuti su BigBlueButton.
-    video: Guarda il tutorial sull'utilizzo di GreenLight
+    about: "%{href} è una semplice interfaccia per il software di video-conferenza open source. Puoi creare Stanze per ospitare i meeting, o partecipare ad altri meeting utilizzando pratici collegamenti brevi."
+    welcome: Benvenuti su HypeEd.
+    video: Guarda il tutorial sull'utilizzo di HypeEd
     upgrade: Mostrami come aggiornare alla versione 2.0!
     version: "E' stata rilasciata una nuova versione di GreenLight, ma il tuo database non è compatibile."
   language_default: Predefinito (linguaggio del browser)

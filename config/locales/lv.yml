@@ -162,7 +162,7 @@ lv:
         username: Lietotājvārds
       title: Lietotāju pārvaldība
   add_to_google_calendar: "Pievienot manam Google kalendāram"
-  bigbluebutton: BigBlueButton
+  bigbluebutton: HypeEd
   bigbluebutton_exception: "Hmm, mēģinot sākt sapulci, gadījās ķibele!"
   cancel: Atcelt
   cookies:
@@ -236,7 +236,7 @@ lv:
     email: E-pasts
     submit: Iesniegt/Nosūtīt
   go_back: Atpakaļ/Atgriezties
-  greenlight: Greenlight
+  greenlight: HypeEd
   header:
     all_recordings: Visi ieraksti
     dropdown:
@@ -260,9 +260,9 @@ lv:
     search:
       start: Sākam meklēšanu ...
   landing:
-    about: "%{href} ir atklātā koda video sapulču servera BigBlueButton vienkārša saskarne (gui). Izmantojot īsu un ērtu saiti, varat izveidot savas video sapulču telpas, rīkot video sapulces vai piedalīties citu rīkotās."
-    welcome: Laipni lūgti video sapulču serverī BigBlueButton!
-    video: Iepazīstieties ar Greenlight videopamācību
+    about: "%{href} ir atklātā koda video sapulču servera vienkārša saskarne (gui). Izmantojot īsu un ērtu saiti, varat izveidot savas video sapulču telpas, rīkot video sapulces vai piedalīties citu rīkotās."
+    welcome: Laipni lūgti video sapulču serverī HypeEd!
+    video: Iepazīstieties ar HypeEd videopamācību
     upgrade: "Parādiet man, kā versiju paaugstināt uz 2.0!"
     version: "Ir izlaista augstāka Greenlight versija, taču jūsu datu bāze ar to nav saderīga."
   language_default: Noklusējums (pārlūka valoda)

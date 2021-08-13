@@ -161,7 +161,7 @@ tr_TR:
         username: Kullanıcı adı
       title: Kullanıcıları Yönet
   add_to_google_calendar: "Kullanıcıları Yönet"
-  bigbluebutton: BigBlueButton
+  bigbluebutton: HypeEd
   bigbluebutton_exception: Hata! Toplantıya başlarken bir hata oluştu!
   cancel: İptal
   cookies:
@@ -235,7 +235,7 @@ tr_TR:
     email: E-mail
     submit: Gönder
   go_back: Geri dön
-  greenlight: Greenlight
+  greenlight: HypeEd
   header:
     all_recordings: Tüm Kayıtlar
     dropdown:
@@ -259,9 +259,9 @@ tr_TR:
     search:
       start: Armaya başla
   landing:
-    about: "%{href} BigBlueButton açık kaynak web konferans sunucusu için basit bir  ön yüzdür. Oturumlar düzenlemek için kendi odalarınızı oluşturabilir veya  kısa bir bağlantı göndererek katılmalarını sağlayabilirsiniz."
-    welcome: BigBlueButton'a hoş geldiniz.
-    video: Greenlight'ı kullanma hakkındaki eğitimimizi izleyin
+    about: "%{href} açık kaynak web konferans sunucusu için basit bir  ön yüzdür. Oturumlar düzenlemek için kendi odalarınızı oluşturabilir veya  kısa bir bağlantı göndererek katılmalarını sağlayabilirsiniz."
+    welcome: HypeEd'a hoş geldiniz.
+    video: HypeEd'ı kullanma hakkındaki eğitimimizi izleyin
     upgrade: 2.0'a nasıl yükselteceğimi göster!
     version: "Greenlight'ın yeni bir versiyonunu yayınladık, ancak veritabanınız uyumlu değil."
   language_default: Varsayılan (tarayıcı dili)

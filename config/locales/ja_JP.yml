@@ -224,7 +224,7 @@ ja_JP:
         valid: 有効
       title: ユーザー管理
   add_to_google_calendar: "Googleカレンダーに追加"
-  bigbluebutton: BigBlueButton
+  bigbluebutton: HypeEd
   bigbluebutton_exception: 会議を開始するときにエラーが発生しました！
   cancel: キャンセル
   cookies:
@@ -302,7 +302,7 @@ ja_JP:
     email: メールアドレス
     submit: 送信
   go_back: 戻る
-  greenlight: Greenlight
+  greenlight: HypeEd
   header:
     all_recordings: すべての録画
     dropdown:
@@ -327,11 +327,11 @@ ja_JP:
     search:
       start: 検索開始...
   landing:
-    about: "%{href}は、オープンソースWeb会議サーバ BigBlueButton のシンプルなフロントエンドです。 自分の会議室を作成してセッションを主催したり、簡単なリンクを使用して他のユーザーを招待したりできます。"
-    welcome: BigBlueButton へようこそ
-    video: Greenlightの使い方に関するチュートリアルを見る
+    about: "%{href}は、オープンソースWeb会議サーバ のシンプルなフロントエンドです。 自分の会議室を作成してセッションを主催したり、簡単なリンクを使用して他のユーザーを招待したりできます。"
+    welcome: HypeEd へようこそ
+    video: HypeEdの使い方に関するチュートリアルを見る
     upgrade: 2.0にアップグレードする方法を教えて！
-    version: Greenlightの新しいバージョンをリリースしましたが、データベースには互換性がありません。
+    version: HypeEdの新しいバージョンをリリースしましたが、データベースには互換性がありません。
   language_default: デフォルト(ブラウザの言語)
   ldap_error: LDAPサーバーに接続できません。.envファイルのLDAP構成を確認しサーバが実行されていることを確認してください。
   login: サインイン

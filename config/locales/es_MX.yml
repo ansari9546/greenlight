@@ -162,7 +162,7 @@ es_MX:
         username: Nombre de usuario
       title: Administrar usuarios
   add_to_google_calendar: "Agregar a calendario de Google"
-  bigbluebutton: BigBlueButton
+  bigbluebutton: HypeEd
   bigbluebutton_exception: Oh no! Ocurrió un error al iniciar la sesión.
   cancel: Cancelar
   cookies:
@@ -236,7 +236,7 @@ es_MX:
     email: Cuenta de correo
     submit: Enviar
   go_back: Atrás
-  greenlight: Greenlight
+  greenlight: HypeEd
   header:
     all_recordings: Todas las grabaciones
     dropdown:
@@ -260,9 +260,9 @@ es_MX:
     search:
       start: Iniciar busqueda...
   landing:
-    about: "Greenlight es una interface web para tu servidor %{href}de conferencias de fuentes libres. Puedes crear tus propias salas y ser anfitrión de sesiones o ingresar a las de otros utilizando un corto y conveniente enlace."
+    about: "HypeEd es una interface web para tu servidor %{href}de conferencias de fuentes libres. Puedes crear tus propias salas y ser anfitrión de sesiones o ingresar a las de otros utilizando un corto y conveniente enlace."
     welcome: Bienvenido a <span class="green-grad">Greenlight</span>.
-    video: Ve nuestro tutorial de como utilizar Greenlight
+    video: Ve nuestro tutorial de como utilizar HypeEd
     upgrade: Muestrame como actualizar a versión 2.0
     version: Hemos publicado una nueva version de Greenlight pero tu base de datos no es compatible.
   language_default: Por omisión (idioma del navegador)

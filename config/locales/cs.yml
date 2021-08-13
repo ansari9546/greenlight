@@ -223,7 +223,7 @@ cs:
         valid: Platné
       title: Spravovat uživatele
   add_to_google_calendar: "Přidat do Google Calendar"
-  bigbluebutton: BigBlueButton
+  bigbluebutton: HypeEd
   bigbluebutton_exception: Při startu konference nastala chyba!
   cancel: Zrušit
   cookies:
@@ -300,7 +300,7 @@ cs:
     email: e-mail
     submit: Odeslat
   go_back: Zpět
-  greenlight: Greenlight
+  greenlight: HypeEd
   header:
     all_recordings: Všechny nahrávky
     dropdown:
@@ -324,9 +324,9 @@ cs:
     search:
       start: Vyhledávám...
   landing:
-    about: "%{href} je jednoduchá nadstavba pro Váš open source webový konferenční server BigBlueButton. Můžete vytvářet vlastní virtuální místnosti pro pořádání konferencí, nebo se můžete připojit ke konferencím ostatních uživatelů jednoduchým a pohodlným kliknutím na přijatý odkaz."
-    welcome: Vítejte v BigBlueButton.
-    video: "Zhlédněte naše instruktážní video, jak používat Greenlight"
+    about: "%{href} je jednoduchá nadstavba pro Váš open source webový konferenční server. Můžete vytvářet vlastní virtuální místnosti pro pořádání konferencí, nebo se můžete připojit ke konferencím ostatních uživatelů jednoduchým a pohodlným kliknutím na přijatý odkaz."
+    welcome: Vítejte v HypeEd.
+    video: "Zhlédněte naše instruktážní video, jak používat HypeEd"
     upgrade: Návod jak provést upgrade na Greenlight verze 2.0.
     version: "K dispozici je nová verze Greenlight, ale Vaše databáze není kompatibilní."
   language_default: Výchozí (jazyk webového prohlížeče)

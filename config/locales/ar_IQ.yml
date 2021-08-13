@@ -224,7 +224,7 @@ ar_IQ:
         valid: صالح
       title: إدارة المستخدمين
   add_to_google_calendar: "إضافة إلى تقويم Google"
-  bigbluebutton: BigBlueButton
+  bigbluebutton: HypeEd
   bigbluebutton_exception: عفوًا ، حدث خطأ عند بدء الاجتماع
   cancel: إلغاء
   cookies:
@@ -302,7 +302,7 @@ ar_IQ:
     email: البريد الإلكتروني
     submit: إرسال
   go_back: عودة
-  greenlight: Greenlight
+  greenlight: HypeEd
   header:
     all_recordings: كافة التسجيلات
     dropdown:
@@ -327,9 +327,9 @@ ar_IQ:
     search:
       start: بدء البحث...
   landing:
-    about: "%{href} هو واجهة أمامية بسيطة لخادم مؤتمرات الويب المفتوح المصدر BigBlueButton الخاص بك. يمكنك إنشاء غرف خاصة بك لاستضافة الجلسات، أو الانضمام إلى الآخرين باستخدام رابط قصير ومريح. "
-    welcome: مرحبًا بك في BigBlueButton
-    video: شاهد برنامجنا التعليمي حول استخدام Greenlight
+    about: "%{href} هو واجهة أمامية بسيطة لخادم مؤتمرات الويب المفتوح المصدر الخاص بك. يمكنك إنشاء غرف خاصة بك لاستضافة الجلسات، أو الانضمام إلى الآخرين باستخدام رابط قصير ومريح. "
+    welcome: مرحبًا بك في HypeEd
+    video: شاهد برنامجنا التعليمي حول استخدام HypeEd
     upgrade: أرني كيفية الترقية إلى 2.0!
     version: لقد أصدرنا إصدارًا جديدًا من Greenlight ، لكن قاعدة البيانات غير متوافقة.
   language_default: الافتراضي (لغة المتصفح)

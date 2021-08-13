@@ -213,7 +213,7 @@ ca_ES:
         valid: Valid
       title: Administrar usuaris
   add_to_google_calendar: "Afegir al Calendari de Google"
-  bigbluebutton: BigBlueButton
+  bigbluebutton: HypeEd
   bigbluebutton_exception: Os pedrer! Ha hagut un error a l'iniciar la sessió.
   cancel: Cancel·lar
   cookies:
@@ -289,7 +289,7 @@ ca_ES:
     email: Compte de correu
     submit: Enviar
   go_back: Enrera
-  greenlight: Greenlight
+  greenlight: HypeEd
   header:
     all_recordings: Totes les gravacions
     dropdown:
@@ -313,9 +313,9 @@ ca_ES:
     search:
       start: Començar la cerca...
   landing:
-    about: "%{href} és una interfície web per al teu servidor de conferències de codi obert BigBlueButton. Pots crear les teves pròpies sales per a ser anfitrió de sessions o unir-te a altres utilitzant un enllaç curt adequat."
+    about: "%{href} és una interfície web per al teu servidor de conferències de codi obert. Pots crear les teves pròpies sales per a ser anfitrió de sessions o unir-te a altres utilitzant un enllaç curt adequat."
     welcome: Benvingut a <span class="green-grad">Greenlight</span>.
-    video: Mira el nostre tutorial sobre com utilizar Greenlight
+    video: Mira el nostre tutorial sobre com utilizar HypeEd
     upgrade: Mostra'm com actualitzar a la versió 2.0
     version: "Hem publicat una nova versió de Greenlight, però la teva base de dades no és compatible."
   language_default: Per omissió (idioma del navegador)

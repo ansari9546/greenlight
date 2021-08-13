@@ -162,7 +162,7 @@ hy:
         username: Օգտվողի անուն
       title: Օգտվողների կառավարում
   add_to_google_calendar: "ավելացնել իմ Google Calendar-ում"
-  bigbluebutton: BigBlueButton
+  bigbluebutton: HypeEd
   bigbluebutton_exception: "Ցավոք, հանդիպումը սկսելիու խնդիրներն են առաջացել"
   cancel: Չեղարկել
   cookies:
@@ -236,7 +236,7 @@ hy:
     email: էլեկտրոնային փոստ
     submit: Ուղարկել
   go_back: Վերադառնալ
-  greenlight: Greenlight
+  greenlight: HypeEd
   header:
     all_recordings: Բոլոր գրանցումները
     dropdown:
@@ -260,9 +260,9 @@ hy:
     search:
       start: Որոնել․․․
   landing:
-    about: "%{href} BigBlueButton-ի սերվերի բաց կոդով պարզեցված ինտերֆեյս է"
-    welcome: Բարի գալուստ BigBlueButton
-    video: Ծանոթացեք Greenlight-ի օգտագործման տեսաուղեցույցներին
+    about: "%{href}-ի սերվերի բաց կոդով պարզեցված ինտերֆեյս է"
+    welcome: Բարի գալուստ HypeEd
+    video: Ծանոթացեք HypeEd-ի օգտագործման տեսաուղեցույցներին
     upgrade: "Ցուցադրեք, թե ինչպես թարմացնեմ 2.0 տարբերակին"
     version: "Թողարկվել է Greenlight-ի նոր տարբերակը, սակայն Ձեր տվյալների հենքը անհամատեղելի է"
   language_default: Ի սկզբանե նշված լեզուն(Բրաուզերի լեզուն)

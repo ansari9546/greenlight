@@ -128,7 +128,7 @@ pl_PL:
         username: Nazwa użytkownika
       title: Zarządzaj użytkownikami
   add_to_google_calendar: "Dodaj do Kalendarza Google"
-  bigbluebutton: BigBlueButton
+  bigbluebutton: HypeEd
   bigbluebutton_exception: "Ups, wystąpił błąd podczas rozpoczynania spotkania!"
   cancel: Anuluj
   cookies:
@@ -202,7 +202,7 @@ pl_PL:
     email: Email
     submit: Prześlij
   go_back: Wróć
-  greenlight: Greenlight
+  greenlight: HypeEd
   header:
     all_recordings: Wszystkie nagrania
     dropdown:
@@ -225,8 +225,8 @@ pl_PL:
         footer: 'BigBlueButton to system konferencji internetowych o otwartym kodzie źródłowym. Więcej informacji na temat BigBlueButton można znaleźć na stronie https://bigbluebutton.org/.'
   landing:
     about: "%{href} to prosty front-end dla twojego serwera konferencji internetowych typu open-source. Możesz tworzyć własne pokoje do prowadzenia sesji lub dołączać do innych za pomocą krótkiego i wygodnego łącza."
-    welcome: Witamy w BigBlueButton.
-    video: Obejrzyj nasz samouczek na temat korzystania z Greenlight
+    welcome: Witamy w HypeEd.
+    video: Obejrzyj nasz samouczek na temat korzystania z HypeEd
     upgrade: "Pokaż, jak uaktualnić do wersji 2.0!"
     version: "Wydaliśmy nową wersję Greenlight, ale twoja baza danych nie jest kompatybilna."
   language_default: Domyślny (język przeglądarki)

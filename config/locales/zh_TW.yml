@@ -224,7 +224,7 @@ zh_TW:
         valid: 有效
       title: 管理使用者
   add_to_google_calendar: "添加到Google日曆"
-  bigbluebutton: BigBlueButton
+  bigbluebutton: HypeEd
   bigbluebutton_exception: 哎呀，啟動會議出錯！
   cancel: 取消
   cookies:
@@ -302,7 +302,7 @@ zh_TW:
     email: Email
     submit: 提交
   go_back: 返回
-  greenlight: Greenlight
+  greenlight: HypeEd
   header:
     all_recordings: 所有錄影
     dropdown:
@@ -327,8 +327,8 @@ zh_TW:
     search:
       start: 開始搜尋...
   landing:
-    about: "%{href} 是開源線上會議系統「BigBlueButton」的簡易前端，您可以創建並主持會議，或通過連結加入他人建立的會議室。"
-    welcome: 歡迎來到BigBlueButton線上會議系統
+    about: "%{href} 是開源線上會議系統「HypeEd」的簡易前端，您可以創建並主持會議，或通過連結加入他人建立的會議室。"
+    welcome: 歡迎來到HypeEd線上會議系統
     video: 請看使用說明
     upgrade: 告訴我怎麼升級到 2.0!
     version: 我們發佈了新版Greenlight，但您的資料庫不相容。

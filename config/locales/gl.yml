@@ -224,7 +224,7 @@ gl:
         valid: Válido
       title: Administrar usuarios
   add_to_google_calendar: "Engadir ao calendario de Google"
-  bigbluebutton: BigBlueButton
+  bigbluebutton: HypeEd
   bigbluebutton_exception: Ouh! produciuse un erro ao comezar a xuntanza.
   cancel: Cancelar
   cookies:
@@ -302,7 +302,7 @@ gl:
     email: Correo-e
     submit: Enviar
   go_back: Ir atrás
-  greenlight: Greenlight
+  greenlight: HypeEd
   header:
     all_recordings: Todas as gravacións
     dropdown:
@@ -327,9 +327,9 @@ gl:
     search:
       start: Comezar a busca…
   landing:
-    about: "%{href} é unha interface sinxela para o servidor de conferencia web de código aberto BigBlueButton. Pode crear as súas propias salas para acoller sesións ou unirse a outras usando unha ligazón curta e cómoda."
-    welcome: Benvido/a a BigBlueButton.
-    video: Vexa o noso titorial sobre como usar Greenlight
+    about: "%{href} é unha interface sinxela para o servidor de conferencia web de código aberto. Pode crear as súas propias salas para acoller sesións ou unirse a outras usando unha ligazón curta e cómoda."
+    welcome: Benvido/a a HypeEd.
+    video: Vexa o noso titorial sobre como usar HypeEd
     upgrade: Amósame como actualizar á versión 2.0!
     version: "Temos publicada unha nova versión de Greenlight, mais a súa base de datos non é compatíbel."
   language_default: Por omisión (idioma do navegador)

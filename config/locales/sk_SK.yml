@@ -223,7 +223,7 @@ sk_SK:
         valid: Platné
       title: Správa užívateľov
   add_to_google_calendar: "Pridaj do Google Kalendára"
-  bigbluebutton: BigBlueButton
+  bigbluebutton: HypeEd
   bigbluebutton_exception: "Oops, pri štarte konferencie nastala chyba!"
   cancel: Zrušiť
   cookies:
@@ -299,7 +299,7 @@ sk_SK:
     email: Email
     submit: Odoslať
   go_back: Späť
-  greenlight: Greenlight
+  greenlight: HypeEd
   header:
     all_recordings: Všetky nahrávky
     dropdown:
@@ -323,9 +323,9 @@ sk_SK:
     search:
       start: Začať vyhľadávanie
   landing:
-    about: "%{href} je jednoduchá nadstavba pre Váš open-source webový konferenčný server BigBlueButton. Môžete vytvárať vlastné virtuálne miestnosti pre organizovanie konferencií, alebo sa môžete pripojiť ku konferenciám ostatných užívateľov jednoduchým a pohodlným kliknutím na prijatý odkaz."
-    welcome: Vitajte na servri BigBlueButton.
-    video: "Pozrite si videonávod, ako Greenlight používať"
+    about: "%{href} je jednoduchá nadstavba pre Váš open-source webový konferenčný server. Môžete vytvárať vlastné virtuálne miestnosti pre organizovanie konferencií, alebo sa môžete pripojiť ku konferenciám ostatných užívateľov jednoduchým a pohodlným kliknutím na prijatý odkaz."
+    welcome: Vitajte na servri HypeEd.
+    video: "Pozrite si videonávod, ako HypeEd používať"
     upgrade: "Ukážte mi, ako upgradovať na ver. 2.0!"
     version: "Vydali sme novú verziu Greenlight, ale Vaša databáza nie je kompatibilná."
   language_default: Predvolený (jazyk prehliadača)
