@@ -102,6 +102,20 @@
             <%= link_to t("signup.title"), signup_path, :class => "btn btn-outline-primary mx-2 sign-in-button" %>
           <% end %>
         <% end %>
+
+        <div class="dropdown">
+            <a href="#" class="nav-link pr-0" data-toggle="dropdown" aria-expanded="false">
+            <%= image_tag("guru.svg", id: "guruBtn", class: "avatar") %>
+              <span class="ml-2 d-none d-lg-block">
+                <span class="text-default username">GURU</span>
+              </span>
+            </a>
+            <div class="dropdown-min-width dropdown-menu dropdown-menu-right dropdown-menu-guru" x-placement="bottom-end" style="position: absolute; transform: translate3d(-148px, 32px, 0px); top: 0px; left: 0px; will-change: transform; padding:0;">
+              <div class="guru-list-heading">
+                <p class="guru-item-heading-1 guruHeadingText guru-text">Customer Support</p>
+                <p class="guru-item-heading-2 guru-text">Ask us anything, or share your feedback</p>
+              </div>
+            </div>
       </div>
     </div>
   </div>

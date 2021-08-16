@@ -47,11 +47,6 @@ class SessionsController < ApplicationController
   def ldap_signin
   end
 
-  # Get /flash
-  def flash
-    flash.now[:alert] = "We have exactly books available."
-  end
-
   # Get /get_guru
   def getGuru
     begin

@@ -3,7 +3,7 @@ const webserviceCall = {
 
     CALL_TIMEOUT : 60000,
 
-    webserviceHelper = (payload) => {
+    webserviceHelper : (payload) => {
         return new Promise((resolve, reject) => {
             axios({
                 method: payload.type,
