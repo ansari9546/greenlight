@@ -89,5 +89,34 @@
     </div>
 
     <%= render "shared/footer" %>
+
+    <div class="modal fade" id="guruCallModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content text-center">
+      <div class="modal-body">
+        <div class="card-body p-6">
+          <div class="card-title">
+          <%= image_tag("guru.svg", id: "guruIcon", width: "100", height: "100") %>
+          </div>
+          <div class="mt-5">
+            <label class="form-label" id="guruName">Arsalan33</label>
+            <label class="guru-call-status" id="guruCallStatus">Connecting</label>
+          </div>
+          <div class="mt-6">
+            <button id="cancelCall" class="btn btn-primary btn-block" onClick="guruCallHelper.onCancelClick()">Cancel</button>
+            <button class="btn btn-secondary text-primary btn-block" >Close</button>
+          </div>
+        </div>
+        <div class="card-footer">
+          <p><%= t("modal.share_access.footer") %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    
   </body>
 </html>

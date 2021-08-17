@@ -34,6 +34,19 @@ $(document).on('turbolinks:load', function(){
 });
 
 const guruCallHelper = {
+
+    callStatusMap: {
+        HYPE_INVITE_STATUS_PENDING: 0,
+        HYPE_INVITE_STATUS_DISPLAYED: 1,
+        HYPE_INVITE_STATUS_ACCEPTED: 2,
+        HYPE_INVITE_STATUS_REJECTED: 3,
+        HYPE_INVITE_STATUS_TIMEOUT: 4,
+        HYPE_INVITE_STATUS_JOINING: 5,
+        HYPE_INVITE_STATUS_JOINED: 6,
+        HYPE_INVITE_STATUS_CANCELED: 7,
+        HYPE_INVITE_STATUS_NOANSWER: 8,
+      },
+
     guruDetails: {},
 
     guruUrlDetails: {},
@@ -48,13 +61,16 @@ const guruCallHelper = {
         guruCallHelper.guruUrlDetails.guruCode = guruCode;
         webserviceCall.webserviceHelper(payload)
         .then((response) =>{
-            $(".guru-dropdown-item, .no-guru-div").remove()
+            $(".guru-dropdown-item, .no-guru-div").remove();
             guruCallHelper.guruDetails = response.data.authToken;
             guruCallHelper.guruListsUI(response.data.data);
         })
         .catch((error) => {
             console.log('error found', error);
-            //no guru found
+            $(".guru-dropdown-item, .no-guru-div").remove();let noGuruUI = `<div class=" no-guru-div">
+            <p class="guru-dropdown-p" style="text-align: center;">No Guru Found</p>
+        </div>`;
+            $(".dropdown-min-width").append(noGuruUI);
         });
 
     },
@@ -79,20 +95,20 @@ const guruCallHelper = {
                     <p class="guru-dropdown-p">${data.username}</p>
                     </div>
                     <div class="col-lg-4 guru-i-div">
-                    <a title="Video Call" onclick="guruCallHelper.startGuruCall(${data.id}, ${false});">
+                    <a title="Video Call" onclick="guruCallHelper.startGuruCall(${data.id}, ${false}, '${data.username}');">
                         <i class="guru-dropdown-i fas fa-video"></i>
                     </a>
-                    <a title="Audio Call" onclick="guruCallHelper.startGuruCall(${data.id}, ${true});">
+                    <a title="Audio Call" onclick="guruCallHelper.startGuruCall(${data.id}, ${true}, '${data.username}');">
                         <i class="guru-dropdown-i fas fa-headphones"></i>
                     </a>
                     </div>
                 </div>`
     },
 
-    startGuruCall: (guruId, isAudioCall) => {
-        let meetingSubType = `1-1`;
+    startGuruCall: (guruId, isAudioCall, guruName) => {
+        let meetingSubType = `1_0`;
         if(isAudioCall){
-            meetingSubType = `1_0`;
+            meetingSubType = `1_1`;
         }
         let  participantObjsArray = [{ id: guruId + "", type: 1 }];
         let timeStamp = Math.floor(new Date().getTime() / 1000);
@@ -103,9 +119,13 @@ const guruCallHelper = {
             meetingSubType: meetingSubType,
             timeStamp: timeStamp + ""
         };
+        //show model
+        $("#guruName").text(guruName);
+        $("#guruCallStatus").text(getLocalizedString('guru.GURU_STR_3'));
+        $("#guruCallModal").modal('show');
         let payload = {
-            url: `${guruCallHelper.guruUrlDetails.guruUrl}/api/v1.3/user/${guruId}/meetings/invite`,
-            method: `POST`,
+            url: `${guruCallHelper.guruUrlDetails.guruUrl}/api/v1.3/user/${guruCallHelper.guruDetails.userId}/meetings/invite`,
+            type: `POST`,
             headers: {
                 "Content-Type": "application/json",
                 "x-access-token": guruCallHelper.guruDetails.token
@@ -115,12 +135,168 @@ const guruCallHelper = {
 
         webserviceCall.webserviceHelper(payload)
         .then((response) =>{
-            onsole.log('error found', response);
+            console.log('Success in call connected', response);
+            if (response && response.status == 200) {
+                if (response.data && response.data.statusCode == 0) {
+                    //set reference id here in 
+                    guruCallHelper.guruDetails.referenceId = response.data.data.referenceId;
+                    //poll call status
+                    guruCallHelper.pollCallStatus(response.data.data)
+                  return;
+                }
+              }
+              guruCallHelper.errorConnectedCall(response);
         })
         .catch((error) => {
             console.log('error found', error);
+            guruCallHelper.errorConnectedCall(response);
             //no guru found
         });
+    },
+
+    errorConnectedCall: (error) => {
+        // show error status
+        //disable button
+        $("#cancelCall").attr("disabled", true);
+        $("#guruCallStatus").text(getLocalizedString('guru.GURU_STR_7'));
+        setTimeout(() => {
+            $("#cancelCall").removeAttr("disabled");
+            $("#guruCallModal").modal('hide')
+          }, 1000);
+    },
+
+    updateCallStatus: (newStatus, successCallback, errorCallback) => {
+        let payload = {
+            url: `${guruCallHelper.guruUrlDetails.guruUrl}/api/v1/user/${guruCallHelper.guruDetails.userId}/meetings/invite/${guruCallHelper.guruDetails.referenceId}`,
+            type: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "x-access-token": guruCallHelper.guruDetails.token,
+              },
+              body: { status: newStatus },
+        };
+        webserviceCall.webserviceHelper(payload)
+        .then((response) =>{
+            console.log('Success in call connected', response);
+            if (response && response.status == 200) {
+                if (response.data && response.data.statusCode == 0) {
+                    // guruCallHelper.guruDetails.referenceId = response.data.data.referenceId
+                    guruCallHelper.successCB(response.data);
+                  return;
+                }
+              }
+              guruCallHelper.errorConnectedCall(response);
+        })
+        .catch((error) => {
+            console.log('error found', error);
+            guruCallHelper.errorConnectedCall(response);
+            //no guru found
+        });
+    },
+
+    onCancelClick(){
+        $("#cancelCall").attr("disabled", true);
+        $("#guruCallStatus").text(getLocalizedString('guru.GURU_STR_25'));
+        //change status to disconnecting
+        guruCallHelper.updateCallStatus(guruCallHelper.callStatusMap.HYPE_INVITE_STATUS_CANCELED);
+    },
+
+    pollCallStatus(data){
+        if(!guruCallHelper.guruDetails.referenceId){
+            // return error;
+            // hide call modal
+        }
+        let payload= {
+            url: `${guruCallHelper.guruUrlDetails.guruUrl}/api/v1/user/${guruCallHelper.guruDetails.userId}/meetings/invite/${guruCallHelper.guruDetails.referenceId}`,
+            type: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "x-access-token": guruCallHelper.guruDetails.token,
+              },
+        };
+        webserviceCall.webserviceHelper(payload)
+        .then((response) =>{
+            console.log('Success in call connected', response);
+            if (response && response.status == 200) {
+                if (response.data && response.data.statusCode == 0) {
+                    guruCallHelper.successCB(response.data);
+                    return;
+                }
+              }
+              guruCallHelper.errorConnectedCall(response);
+        })
+        .catch((error) => {
+            console.log('error found', error);
+            guruCallHelper.errorConnectedCall(error);
+            //no guru found
+        });
+    },
+
+    successCB(data){
+        let meetingId = data.data.meetingId;
+        let callStatus = data.data.callStatus;
+        let inviterStatus = data.data.inviterStatus;
+        if (callStatus == guruCallHelper.callStatusMap.HYPE_INVITE_STATUS_DISPLAYED) {
+            //set call status displayed
+            $("#guruCallStatus").text(getLocalizedString('guru.GURU_STR_4'));
+        }
+        // if call status accepted
+        if (callStatus == guruCallHelper.callStatusMap.HYPE_INVITE_STATUS_ACCEPTED) {
+            //REDIRECT TO HYPE
+            $("#cancelCall").attr("disabled", true);//GURU_STR_5
+            $("#guruCallStatus").text(getLocalizedString('guru.GURU_STR_5'));
+            //show call status accepted
+            guruCallHelper.updateCallStatus(
+                guruCallHelper.callStatusMap.HYPE_INVITE_STATUS_JOINING,
+              () => {
+                  setTimeout(() => {
+                    $("#cancelCall").removeAttr("disabled");
+                    
+                    //open new tab or display click model here
+                  }, 1000);
+                  return;
+              },
+              () => {
+                  $("#guruCallStatus").text(getLocalizedString('guru.GURU_STR_7'));
+                  setTimeout(() => {
+                    $("#cancelCall").removeAttr("disabled");//GURU_STR_5
+                    $("#guruCallModal").modal('hide');
+                  }, 1000);
+                  return;
+              }
+            );
+          }
+
+          if (callStatus == guruCallHelper.callStatusMap.HYPE_INVITE_STATUS_REJECTED) {
+            self.cancelBtnDisable = true;
+            //show call status rejected
+            $("#cancelCall").attr("disabled", true);//GURU_STR_5
+            $("#guruCallStatus").text(getLocalizedString('guru.GURU_STR_6'));
+            setTimeout(() => {
+                $("#cancelCall").removeAttr("disabled");//GURU_STR_5
+                $("#guruCallModal").modal('hide');
+              //hide call model
+            }, 1000);
+            return;
+          }
+
+          if (
+            callStatus == guruCallHelper.callStatusMap.HYPE_INVITE_STATUS_TIMEOUT ||
+            callStatus == guruCallHelper.callStatusMap.HYPE_INVITE_STATUS_CANCELED ||
+            inviterStatus == guruCallHelper.callStatusMap.HYPE_INVITE_STATUS_CANCELED
+          ) {
+            $("#cancelCall").attr("disabled", true);//GURU_STR_5
+            $("#guruCallStatus").text(getLocalizedString('guru.GURU_STR_7'));
+            setTimeout(() => {
+                $("#cancelCall").removeAttr("disabled");//GURU_STR_5
+                $("#guruCallModal").modal('hide');
+            }, 1000);
+            return;
+          }
+
+          setTimeout(() => {
+            guruCallHelper.pollCallStatus(data);
+          }, 3000);
     }
 }
 

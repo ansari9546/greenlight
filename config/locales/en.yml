@@ -662,3 +662,37 @@ en:
     signin: Please sign in to access your account.
     title: Verify your email
     verification: Verification
+  guru:
+    GURU_STR_1: No guru available
+    GURU_STR_2: Guru Call
+    GURU_STR_3: Connecting...
+    GURU_STR_4: Ringing...
+    GURU_STR_5: Accepted
+    GURU_STR_6: Busy
+    GURU_STR_7: Unable to connect
+    GURU_STR_8: Call in progress
+    GURU_STR_9: Call Cancelled
+    GURU_STR_10: No Answer
+    GURU_STR_12: Unable to contact support
+    GURU_STR_13: Unable to fetch call status
+    GURU_STR_14: Unable to cancel call
+    GURU_STR_15: Use chrome or edge to contact with guru
+    GURU_STR_16: Click to join
+    GURU_STR_17: Allow Pop Up to join meeting
+    GURU_STR_18: COMPANY GURU
+    GURU_STR_19: ONESCREEN GURU
+    GURU_STR_20: Unable to fetch guru URL
+    GURU_STR_21: Identify Guru
+    GURU_STR_22: Enter valid server URL
+    GURU_STR_23: Guru URL successfully saved
+    GURU_STR_24: Identified Guru code successfully saved
+    GURU_STR_25: Call cancel in progress
+    GURU_STR_26: Video Call
+    GURU_STR_27: Audio Call
+    GURU_STR_28: Cancel
+    GURU_STR_29: Close
+    GURU_STR_30: Invalid Guru url provided
+    GURU_STR_31: No Guru Found
+    GURU_STR_32: Customer Support
+    GURU_STR_33: Ask us anything, or share your feedback
+    GURU_STR_34: Typically replies within minutes
