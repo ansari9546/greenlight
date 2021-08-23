@@ -695,4 +695,15 @@ en:
     GURU_STR_31: No Guru Found
     GURU_STR_32: Customer Support
     GURU_STR_33: Ask us anything, or share your feedback
-    GURU_STR_34: Typically replies within minutes
+    GURU_STR_34: Typically replies in a few minutes
+    GURU_STR_35: Click here to join
+    GURU_STR_36: Guru Settings
+    GURU_STR_37: Guru Url
+    GURU_STR_38: Guru Code
+    GURU_STR_39: A code can be combination of 5 to 10 alphanumeric words
+    GURU_STR_40: Save
+    GURU_STR_41: Guru Url saved successfully !
+    GURU_STR_42: Default Guru Url saved successfully !
+    GURU_STR_43: Invalid Guru Url provided
+    GURU_STR_44: Code should be 5 to 10 characters in length
+    GURU_STR_45: Click here to join

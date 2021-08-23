@@ -18,7 +18,7 @@
     <div class="d-flex">
       <%= link_to (current_user ? home_page : root_path), class: "header-brand" do %>
         <% begin %>
-          <%= image_tag(logo_image, class: "header-brand-img", alt:"") %>
+          <%= image_tag("HypeEd.svg", class: "header-brand-img", alt:"") %>
         <% rescue %>
           <%= t("administrator.site_settings.branding.invalid") %>
         <% end %>
@@ -104,16 +104,25 @@
         <% end %>
 
         <div class="dropdown">
-            <a href="#" class="nav-link pr-0" data-toggle="dropdown" aria-expanded="false">
-            <%= image_tag("guru.svg", id: "guruBtn", class: "avatar") %>
+            <a href="#" class="nav-link pr-0 guruUsername" data-toggle="dropdown" aria-expanded="false">
+            <%= image_tag("guru.svg", id: "guruBtn", class: "guru-avatar") %>
               <span class="ml-2 d-none d-lg-block">
                 <span class="text-default username">GURU</span>
               </span>
             </a>
             <div class="dropdown-min-width dropdown-menu dropdown-menu-right dropdown-menu-guru" x-placement="bottom-end" style="position: absolute; transform: translate3d(-148px, 32px, 0px); top: 0px; left: 0px; will-change: transform; padding:0;">
               <div class="guru-list-heading">
-                <p class="guru-item-heading-1 guruHeadingText guru-text">Customer Support</p>
-                <p class="guru-item-heading-2 guru-text">Ask us anything, or share your feedback</p>
+                <p class="guru-item-heading-1 guruHeadingText guru-text"><%= t("guru.GURU_STR_32") %></p>
+                <p class="guru-item-heading-2 guru-text"><%= t("guru.GURU_STR_33") %></p>
+              </div>
+              <div id = "guruListsDiv">
+              <div style=" width: 100%;  text-align: center; display;block" id="guruListsDivSpinner">
+                <div class="spinner-grow text-muted" id="" style=""></div>
+              </div>
+              </div>
+              <div class="dropdown-divider"></div>
+              <div class="text-muted" style="text-align: center;">
+                <p><%= t("guru.GURU_STR_34") %></p>
               </div>
             </div>
       </div>

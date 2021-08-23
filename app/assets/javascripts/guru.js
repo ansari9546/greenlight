@@ -1,12 +1,24 @@
 $(document).on('turbolinks:load', function(){
 
     $("#getGuruDetails").on("show.bs.modal", function(e){
+        $("#guruUrlEmpty, #guruCodeEmpty").css("display", "none");
         guruDetailsHandler.getGuruDetails();
+    });
+
+    $("#guruCallModal").on("show.bs.modal", function(e){
+        $("#guruHrefDiv").css("display", "none");
+        $("#guruCallDiv").css("display", "block");
+        $("#cancelCall").removeAttr("disabled");
     });
 
     $("#setGuruDetails").click(function(){
         let guruUrl = $("#guruUrl").val();
         let guruCode = $("#guruCode").val();
+        if(guruCode != "" && (guruCode.length < 5 || guruCode.length > 10)){
+            $("#guruCodeEmpty").css("display", "block");
+            console.log("guruCodeEmpty")
+            return;
+        }
         if(!!guruUrl){
             guruDetailsHandler.testGuruUrl(guruUrl)
             .then((response) => {
@@ -15,19 +27,23 @@ $(document).on('turbolinks:load', function(){
             .catch((error) => {
                 //display error
                 // guruDetailsHandler.showFlash("msg");
+                console.log("error in testing url", error )
+                $("#guruUrlEmpty").css("display", "block");
             });
         }else{
             guruUrl = `https://hype.onescreensolutions.com`
-            guruDetailsHandler.saveGuruDetails(guruUrl, guruCode);
+            guruDetailsHandler.saveGuruDetails(guruUrl, guruCode, true);
         }
     });
 
-    $("#guruBtn").click(function(e){
+    $("#guruBtn, .guruUsername").click(function(e){
         //call API here
-        // guruDetailsHandler.getDetails((guruDetails) => {
-        //     //call Get api here
-        // });
-        guruCallHelper.getGuruLists(`https://hype.onescreensolutions.com`, `112233`);
+        $(".guru-dropdown-item, .no-guru-div").remove();
+        $("#guruListsDivSpinner").css("display", "block");
+        guruDetailsHandler.getDetails((guruDetails) => {
+            //call Get api here
+            guruCallHelper.getGuruLists(guruDetails.guruUrl, guruDetails.guruCode);
+        });
     });
 
 
@@ -51,6 +67,8 @@ const guruCallHelper = {
 
     guruUrlDetails: {},
 
+    cancelClick: false,
+
     getGuruLists: (guruUrl, guruCode) => {
         let payload = {
             url: url = `${guruUrl}/api/v1/user/hype/roles?role=1&guruCode=${guruCode}`,
@@ -59,18 +77,21 @@ const guruCallHelper = {
         };
         guruCallHelper.guruUrlDetails.guruUrl = guruUrl;
         guruCallHelper.guruUrlDetails.guruCode = guruCode;
+        guruCallHelper.cancelClick = false;
         webserviceCall.webserviceHelper(payload)
         .then((response) =>{
+            $("#guruListsDivSpinner").css("display", "none");
             $(".guru-dropdown-item, .no-guru-div").remove();
             guruCallHelper.guruDetails = response.data.authToken;
             guruCallHelper.guruListsUI(response.data.data);
         })
         .catch((error) => {
+            $("#guruListsDivSpinner").css("display", "none");
             console.log('error found', error);
             $(".guru-dropdown-item, .no-guru-div").remove();let noGuruUI = `<div class=" no-guru-div">
             <p class="guru-dropdown-p" style="text-align: center;">No Guru Found</p>
         </div>`;
-            $(".dropdown-min-width").append(noGuruUI);
+            $("#guruListsDiv").append(noGuruUI);
         });
 
     },
@@ -81,10 +102,10 @@ const guruCallHelper = {
             let noGuruUI = `<div class=" no-guru-div">
                 <p class="guru-dropdown-p" style="text-align: center;">No Guru Found</p>
             </div>`
-            $(".dropdown-min-width").append(noGuruUI);
+            $("#guruListsDiv").append(noGuruUI);
         }else{
             for(let index = 0; index < guruList.length; index++){
-                $(".dropdown-min-width").append(guruCallHelper.singleGuruUI(guruList[index]));
+                $("#guruListsDiv").append(guruCallHelper.singleGuruUI(guruList[index]));
             }
         }
     },
@@ -119,10 +140,13 @@ const guruCallHelper = {
             meetingSubType: meetingSubType,
             timeStamp: timeStamp + ""
         };
+        guruCallHelper.cancelClick = false;
+        guruCallHelper.guruUrlDetails.meetingSubType = meetingSubType;
         //show model
         $("#guruName").text(guruName);
         $("#guruCallStatus").text(getLocalizedString('guru.GURU_STR_3'));
         $("#guruCallModal").modal('show');
+        $("#cancelCall").removeAttr("disabled");
         let payload = {
             url: `${guruCallHelper.guruUrlDetails.guruUrl}/api/v1.3/user/${guruCallHelper.guruDetails.userId}/meetings/invite`,
             type: `POST`,
@@ -181,24 +205,35 @@ const guruCallHelper = {
             if (response && response.status == 200) {
                 if (response.data && response.data.statusCode == 0) {
                     // guruCallHelper.guruDetails.referenceId = response.data.data.referenceId
-                    guruCallHelper.successCB(response.data);
+                    successCallback(response.data);
                   return;
                 }
               }
-              guruCallHelper.errorConnectedCall(response);
+              errorCallback(response);
         })
         .catch((error) => {
             console.log('error found', error);
-            guruCallHelper.errorConnectedCall(response);
+            errorCallback(response);
             //no guru found
         });
     },
 
     onCancelClick(){
+        guruCallHelper.cancelClick = true;
         $("#cancelCall").attr("disabled", true);
         $("#guruCallStatus").text(getLocalizedString('guru.GURU_STR_25'));
         //change status to disconnecting
-        guruCallHelper.updateCallStatus(guruCallHelper.callStatusMap.HYPE_INVITE_STATUS_CANCELED);
+        guruCallHelper.updateCallStatus(guruCallHelper.callStatusMap.HYPE_INVITE_STATUS_CANCELED, function(callback){
+            setTimeout(() => {
+                $("#cancelCall").removeAttr("disabled");//GURU_STR_5
+                $("#guruCallModal").modal('hide');
+            }, 1000);
+        }, function(error){
+            setTimeout(() => {
+                $("#cancelCall").removeAttr("disabled");//GURU_STR_5
+                $("#guruCallModal").modal('hide');
+            }, 1000);
+        });
     },
 
     pollCallStatus(data){
@@ -233,6 +268,9 @@ const guruCallHelper = {
     },
 
     successCB(data){
+        if(guruCallHelper.cancelClick == true){
+            return;
+        }
         let meetingId = data.data.meetingId;
         let callStatus = data.data.callStatus;
         let inviterStatus = data.data.inviterStatus;
@@ -251,8 +289,10 @@ const guruCallHelper = {
               () => {
                   setTimeout(() => {
                     $("#cancelCall").removeAttr("disabled");
-                    
+                    //create href and also open new tab and test
                     //open new tab or display click model here
+                    let meetingUrl = `${guruCallHelper.guruUrlDetails.guruUrl}/guest.html?username=&roomId=${data.data.meetingId}&participantEmail=&meetingSubType=${guruCallHelper.guruUrlDetails.meetingSubType}#guestUser`;
+                    guruCallHelper.openGuruNewTab(meetingUrl);
                   }, 1000);
                   return;
               },
@@ -265,6 +305,7 @@ const guruCallHelper = {
                   return;
               }
             );
+            return;
           }
 
           if (callStatus == guruCallHelper.callStatusMap.HYPE_INVITE_STATUS_REJECTED) {
@@ -297,6 +338,32 @@ const guruCallHelper = {
           setTimeout(() => {
             guruCallHelper.pollCallStatus(data);
           }, 3000);
+    },
+    openGuruNewTab(meetingUrl){
+        $( "#guruHref" ).empty();
+        //here set url to href
+        let a = document.createElement('a');
+        let linkText = document.createTextNode(getLocalizedString('guru.GURU_STR_35'));
+        a.appendChild(linkText);
+        a.title = getLocalizedString('guru.GURU_STR_35');
+        a.href = meetingUrl;
+        document.getElementById("guruHref").appendChild(a);
+        let interval = setInterval(() => {
+              let x = window.open(meetingUrl, "_blank");
+              console.log(x);
+              if (!x) {
+                //show click model
+                $("#guruCallDiv").css("display", "none");
+                $("#guruHrefDiv").css("display", "block");
+              } else {
+                  //hide model and reset
+                  $("#cancelCall").removeAttr("disabled");//GURU_STR_5
+                  $("#guruCallModal").modal('hide');
+                clearInterval(interval);
+                clearTimeout(interval);
+                interval = null;
+              }
+          }, 2000);
     }
 }
 
@@ -322,6 +389,7 @@ const guruDetailsHandler = {
             callback(response.data.guruDetails);
         })
         .catch((error) => {
+            console.log('error', error);
             callback({guruUrl:`https://hype.onescreensolutions.com`, guruCode:``})
         });
     },
@@ -341,10 +409,15 @@ const guruDetailsHandler = {
         });
     },
 
-    saveGuruDetails(guruUrl, guruCode) {
+    saveGuruDetails(guruUrl, guruCode, isdefaultURL = false) {
         $.post( `/b/setGuru`, { guruUrl: guruUrl, guruCode: guruCode },
         function(response){
             console.log('response', response);
+            let alertMsg = getLocalizedString('guru.GURU_STR_41');
+            if(isdefaultURL){
+                alertMsg = getLocalizedString('guru.GURU_STR_42');
+            }
+            showAlert(alertMsg);
             $("#getGuruDetails").modal('hide');
         });
     },
@@ -392,4 +465,18 @@ const showFlash = {
             console.log('error', error);
         });
     }
+}
+
+hideAlert = () => {
+    $("#successAlert").css("display", "none");
+}
+
+showAlert = (alertText, isDanger = false) => {
+    console.log("isDanger", isDanger);
+    $("#alertDiv").text(alertText);
+    $("#successAlert").removeClass('alert-danger').addClass('alert-success')
+    if(isDanger){
+        $("#successAlert").addClass('alert-danger').removeClass('alert-success');
+    }
+    $("#successAlert").css('display', 'flex');
 }
