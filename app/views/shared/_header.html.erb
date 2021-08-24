@@ -18,7 +18,7 @@
     <div class="d-flex">
       <%= link_to (current_user ? home_page : root_path), class: "header-brand" do %>
         <% begin %>
-          <%= image_tag("HypeEd.svg", class: "header-brand-img", alt:"") %>
+          <%= image_tag("HypeEd.svg", class: "header-brand-img header-brand-new-style", alt:"") %>
         <% rescue %>
           <%= t("administrator.site_settings.branding.invalid") %>
         <% end %>
@@ -105,10 +105,7 @@
 
         <div class="dropdown">
             <a href="#" class="nav-link pr-0 guruUsername" data-toggle="dropdown" aria-expanded="false">
-            <%= image_tag("guru.svg", id: "guruBtn", class: "guru-avatar") %>
-              <span class="ml-2 d-none d-lg-block">
-                <span class="text-default username">GURU</span>
-              </span>
+              <%= image_tag("guru.svg", id: "guruBtn", class: "guru-avatar") %>
             </a>
             <div class="dropdown-min-width dropdown-menu dropdown-menu-right dropdown-menu-guru" x-placement="bottom-end" style="position: absolute; transform: translate3d(-148px, 32px, 0px); top: 0px; left: 0px; will-change: transform; padding:0;">
               <div class="guru-list-heading">
