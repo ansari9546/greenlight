@@ -387,7 +387,7 @@ const guruDetailsHandler = {
         })
         .catch((error) => {
             console.log('error', error);
-            callback({guruUrl:`https://hype.onescreensolutions.com`, guruCode:`112233`})
+            callback({guruUrl:`https://hype.onescreensolutions.com`, guruCode:``})
         });
     },
 

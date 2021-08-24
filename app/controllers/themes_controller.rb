@@ -30,9 +30,9 @@ class ThemesController < ApplicationController
     @file_contents = File.read(file_name)
 
     # Include the variables and covert scss file to css
-    @compiled = SassC::Engine.new("$primary-color:#{color};" \
+    @compiled = SassC::Engine.new("$primary-color:#2E63AB;" \
                                  "$primary-color-lighten:#{lighten_color};" \
-                                 "$primary-color-darken:#{darken_color};" +
+                                 "$primary-color-darken:#214E8A;" +
                                  @file_contents, syntax: :scss).render
 
     respond_to do |format|
