@@ -195,7 +195,7 @@ table {
 .guru-list-heading {
   background: #80C340;
   color: white;
-  padding: 10px;
+  padding: 10px 0 6px 19px;
 }
 
 .guru-item-heading-1 {
@@ -244,7 +244,9 @@ table {
 
 .guru-dropdown-item{
   display: flex;
-  padding: 3px 2px 3px 7px;
+  padding: 3px 3px 3px 20px;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .guru-dropdown-p{
@@ -255,17 +257,52 @@ table {
 }
 
 .guru-dropdown-i{
-  color: #9aa0ac;
+  color: #337ab7;
   margin-left: 5px;
 }
 
 .guru-name-div{
   padding: 0;
-  width: 70%;
+  width: 90%;
+  display: inline-block;
 }
 
 .guru-i-div{
-  width: 30%;
+  width: 50%;
+  float: right;
+  margin-left: auto;
+  margin-right: 0;
+  margin-top: 6px;
+}
+
+.guru-name-count{
+  font-weight: normal;
+  font-size: 12px;
+  display: inline-block;
+}
+
+.guru-lang-span{
+  font-weight: 500;
+  font-size: 10px;
+  padding: 0 6px;
+  opacity: 0.7;
+  letter-spacing: 0.3;
+  font-family: Roboto;
+  color: #000000;
+}
+
+.guru-anchor-tag{
+  margin: 8px 6px;
+  cursor: pointer;
+}
+
+.guru-name-actual{
+  font-size: 11px;
+  margin-left: 2px;
+  opacity: 0.8;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
 }
 
 .dropdown-min-width{
@@ -306,4 +343,12 @@ table {
 .header-brand-new-style{
   height: 2.8rem;
   margin-top: -6px;
+}
+
+.replies-class{
+  padding: 9px;
+  opacity: 0.85;
+  text-align: center;
+  font-size: 11px;
+  color: #999;
 }

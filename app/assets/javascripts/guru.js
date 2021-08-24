@@ -105,23 +105,30 @@ const guruCallHelper = {
             $("#guruListsDiv").append(noGuruUI);
         }else{
             for(let index = 0; index < guruList.length; index++){
-                $("#guruListsDiv").append(guruCallHelper.singleGuruUI(guruList[index]));
+                $("#guruListsDiv").append(guruCallHelper.singleGuruUI(guruList[index], index +1));
             }
         }
     },
 
-    singleGuruUI : (data) => {
+    singleGuruUI : (data, guruCount) => {
         return `<div class="dropdown-item guru-dropdown-item">
-                    <div class="col-lg-8 guru-name-div">
-                    <p class="guru-dropdown-p">${data.username}</p>
+                    <div class="guru-name-div">
+                    <span class="guru-name-count">
+                        <span>GURU ${guruCount}</span>
+                        <span class="guru-lang-span">( ${AVAILABLE_LANGUAGE[data.language]} )</span>
+                        <span class="guru-name-actual" title=${data.username}>${data.username}</span>
                     </div>
-                    <div class="col-lg-4 guru-i-div">
-                    <a title="Video Call" onclick="guruCallHelper.startGuruCall(${data.id}, ${false}, '${data.username}');">
-                        <i class="guru-dropdown-i fas fa-video"></i>
-                    </a>
-                    <a title="Audio Call" onclick="guruCallHelper.startGuruCall(${data.id}, ${true}, '${data.username}');">
-                        <i class="guru-dropdown-i fas fa-headphones"></i>
-                    </a>
+                    <div class="guru-i-div">
+                        <a title="Video Call" class="guru-anchor-tag" onclick="guruCallHelper.startGuruCall(${data.id}, ${false}, '${data.username}');">
+                            <span style="font-size:17px;"> 
+                                <i class="guru-dropdown-i fas fa-video"></i>
+                            </span>
+                        </a>
+                        <a title="Audio Call" class="guru-anchor-tag" onclick="guruCallHelper.startGuruCall(${data.id}, ${true}, '${data.username}');">
+                            <span style="font-size:17px;">
+                                <i class="guru-dropdown-i fas fa-headphones"></i>
+                            </span>
+                        </a>
                     </div>
                 </div>`
     },
@@ -480,3 +487,11 @@ showAlert = (alertText, isDanger = false) => {
     }
     $("#successAlert").css('display', 'flex');
 }
+
+var AVAILABLE_LANGUAGE  = {
+	"lang_en": "English",
+	"lang_ur": "اردو",
+	"lang_zh": "中文",
+	"lang_es": "Español",
+	"lang_ko": "한국어"
+};
