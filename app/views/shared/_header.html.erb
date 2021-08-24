@@ -73,16 +73,6 @@
                 <% end %>
               <% end %>
               <div class="dropdown-divider"></div>
-              <% if Rails.configuration.help_url.present? %>
-                <a class="dropdown-item" href="<%= Rails.configuration.help_url %>" target="_blank" rel="noopener">
-                  <i class="dropdown-icon far fa-question-circle"></i> <%= t("header.dropdown.help") %>
-                </a>
-              <% end %>
-              <% if Rails.configuration.report_issue_url.present? %>
-                <a class="dropdown-item" href="<%= Rails.configuration.report_issue_url %>" target="_blank" rel="noopener">
-                  <i class="dropdown-icon fas fa-exclamation mr-3"></i><%= t("errors.internal.report") %>
-                </a>
-              <% end %>
               <%= button_to logout_path, class: "dropdown-item" do %>
                 <i class="dropdown-icon fas fa-sign-out-alt"></i> <%= t("header.dropdown.signout") %>
               <% end %>
