@@ -6,8 +6,8 @@ $(document).on('turbolinks:load', function(){
     });
 
     $("#guruCallModal").on("show.bs.modal", function(e){
-        $("#guruHrefDiv").css("display", "none");
-        $("#guruCallDiv").css("display", "block");
+        $("#cancelCall").css("display", "block");
+        $("#openNewTab, #CloseModal").css("display", "none");
         $("#cancelCall").removeAttr("disabled");
     });
 
@@ -349,28 +349,18 @@ const guruCallHelper = {
     openGuruNewTab(meetingUrl){
         $( "#guruHref" ).empty();
         //here set url to href
-        let a = document.createElement('a');
-        let linkText = document.createTextNode(getLocalizedString('guru.GURU_STR_35'));
-        a.appendChild(linkText);
-        a.title = getLocalizedString('guru.GURU_STR_35');
-        a.href = meetingUrl;
-        document.getElementById("guruHref").appendChild(a);
-        let interval = setInterval(() => {
-              let x = window.open(meetingUrl, "_blank");
-              console.log(x);
-              if (!x) {
-                //show click model
-                $("#guruCallDiv").css("display", "none");
-                $("#guruHrefDiv").css("display", "block");
-              } else {
-                  //hide model and reset
-                  $("#cancelCall").removeAttr("disabled");//GURU_STR_5
-                  $("#guruCallModal").modal('hide');
-                clearInterval(interval);
-                clearTimeout(interval);
-                interval = null;
-              }
-          }, 2000);
+        document.getElementById('openNewTab').href = meetingUrl;
+        let x = window.open(meetingUrl, "_blank");
+        console.log(x);
+        if (!x) {
+        //show click model
+            $("#cancelCall").css("display", "none");
+            $("#openNewTab, #CloseModal").css("display", "block");
+        } else {
+            //hide model and reset
+            $("#cancelCall").removeAttr("disabled");//GURU_STR_5
+            $("#guruCallModal").modal('hide');
+        }
     }
 }
 
@@ -397,7 +387,7 @@ const guruDetailsHandler = {
         })
         .catch((error) => {
             console.log('error', error);
-            callback({guruUrl:`https://hype.onescreensolutions.com`, guruCode:``})
+            callback({guruUrl:`https://hype.onescreensolutions.com`, guruCode:`112233`})
         });
     },
 

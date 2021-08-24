@@ -352,3 +352,56 @@ table {
   font-size: 11px;
   color: #999;
 }
+
+.p6-padding{
+  padding: 15px 25px !important;
+}
+
+.modal-text{
+  padding-left: 10px;
+  margin-bottom: 0;
+}
+
+.guru-status{
+  text-align: left;
+  margin-bottom: 0;
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.guru-title{
+  text-align: left;
+  font-weight: 600;
+}
+
+.display-flex{
+  display: flex;
+}
+
+.call-join-btn{
+  width: 175px;
+  margin-right: 25px;
+}
+
+.call-cancel-btn{
+  background-color: #cd201f;
+  border-color: #cd201f;
+  color: white;
+  width: 175px;
+  height: 39px;
+}
+
+.close-btn-width{
+  width: 175px;
+}
+
+@media only screen and (max-width: 600px) {
+  .display-flex {
+      display: block;
+  }
+  .call-join-btn,
+  .call-cancel-btn,
+  .close-btn-width{
+    margin-bottom: 10px;
+  }
+}

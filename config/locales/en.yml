@@ -689,14 +689,14 @@ en:
     GURU_STR_25: Call cancel in progress
     GURU_STR_26: Video Call
     GURU_STR_27: Audio Call
-    GURU_STR_28: Cancel
+    GURU_STR_28: End Call
     GURU_STR_29: Close
     GURU_STR_30: Invalid Guru url provided
     GURU_STR_31: No Guru Found
     GURU_STR_32: Customer Support
     GURU_STR_33: Ask us anything, or share your feedback
     GURU_STR_34: Typically replies in a few minutes
-    GURU_STR_35: Click here to join
+    GURU_STR_35: Click to join call
     GURU_STR_36: Guru Settings
     GURU_STR_37: Guru Url
     GURU_STR_38: Guru Code
@@ -706,4 +706,5 @@ en:
     GURU_STR_42: Default Guru Url saved successfully !
     GURU_STR_43: Invalid Guru Url provided
     GURU_STR_44: Code should be 5 to 10 characters in length
-    GURU_STR_45: Click here to join
+    GURU_STR_45: Calling Screen Skills Guru
+    GURU_STR_46: Please wait, your call is being connected to the OneScreen Guru

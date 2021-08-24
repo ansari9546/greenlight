@@ -99,29 +99,32 @@
 
     <div class="modal" id="guruCallModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true" style="z-index: 1250" data-keyboard="false" data-backdrop="static">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 570px;" role="document">
         <div class="modal-content text-center">
           <div class="modal-body">
-            <div class="card-body p-6">
+            <div class="card-body p-6 p6-padding">
             <div id="guruCallDiv">
-                <div class="card-title">
-                  <%= image_tag("guru.svg", id: "guruIcon", width: "100", height: "100") %>
+                <div class="card-title" style=" text-align: left; ">
+                <h5><%= t("guru.GURU_STR_45") %></h5>
                 </div>
-                <div class="mt-5">
-                  <label class="form-label" id="guruName">Arsalan33</label>
-                  <label class="guru-call-status" id="guruCallStatus">Connecting</label>
-                </div>
-              
-                <div class="mt-6">
-                  <button id="cancelCall" class="btn btn-primary btn-block" onClick="guruCallHelper.onCancelClick()"><%= t("modal.merge_user.cancel") %></button>
-                  
+                <div class="mt-5" style=" display: flex; ">
+                  <div class="" style="">
+                    <%= image_tag("guru.svg", id: "guruIcon", width: "70", height: "70") %>
+                  </div>
+                  <div class="modal-text">
+                    <p class="guru-status" id="guruCallStatus">Accepted</p>
+                    <p class="guru-title" id="guruName">Support_OneScreen</p>
+                    <div class="display-flex">
+                    <a id="openNewTab" class="btn btn-primary btn call-join-btn" href="" target="_blank" style="display:none;"><%= t("guru.GURU_STR_35") %></a>
+                    <button id="cancelCall" class="btn btn-block call-cancel-btn" onclick="guruCallHelper.onCancelClick()" style=""><%= t("guru.GURU_STR_28") %></button>
+                    <button id="CloseModal" class="btn btn-block btn-secondary close-btn-width" onclick="$('#guruCallModal').modal('hide')" style="display:none;margin-top: 0;"><%= t("guru.GURU_STR_29") %></button>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="mt-5" id = "guruHrefDiv" style="display:none; margin-bottom: 50px;">
-              <div id="guruHref" style="margin-bottom: 50px;">
-              </div>
-                <button class="btn btn-secondary text-primary btn-block" onclick="$('#guruCallModal').modal('hide')"><%= t("guru.GURU_STR_29") %></button>
-              </div>
+            </div>
+            <div class="card-footer replies-class">
+              <p><%= t("guru.GURU_STR_46") %></p>
             </div>
           </div>
         </div>
